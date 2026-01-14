@@ -9,7 +9,7 @@ import { INITIAL_CONFIG } from './constants';
 
 const LandingPage: React.FC<{ onNavigate: (page: 'landing' | 'login' | 'register') => void }> = ({ onNavigate }) => (
   <div className="flex flex-col items-center justify-center py-12 text-center bg-white">
-    <div className="bg-white p-4 rounded-full shadow-xl mb-8 border border-green-50 animate-bounce-slow">
+    <div className="bg-white p-4 rounded-full shadow-xl mb-8 border border-green-50 animate-bounce">
        <div className="w-24 h-24 bg-islamic-green rounded-full flex items-center justify-center">
           <span className="text-5xl text-gold-main font-bold">M</span>
        </div>
@@ -337,9 +337,8 @@ const AdminDashboard: React.FC = () => {
 
   const handleDeleteStudent = async (studentId: string) => {
     if(confirm('Apakah Anda yakin ingin menghapus data siswa ini?')) {
-        // Mock deletion - in real app would call service
+        await storageService.deleteStudent(studentId);
         setStudents(prev => prev.filter(s => s.id !== studentId));
-        // await storageService.deleteStudent(studentId); 
     }
   }
 

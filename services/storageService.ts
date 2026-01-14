@@ -114,6 +114,13 @@ export const updateStudentData = async (studentId: string, data: Partial<Student
   }
 };
 
+export const deleteStudent = async (studentId: string): Promise<void> => {
+  await delay(400);
+  let students = getStoredStudents();
+  students = students.filter(s => s.id !== studentId);
+  localStorage.setItem(KEYS.STUDENTS, JSON.stringify(students));
+};
+
 // --- Helpers ---
 
 const getStoredUsers = (): User[] => {
