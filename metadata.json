@@ -1,0 +1,5 @@
+{
+  "name": "PPDB MIS Al Mujahidah",
+  "description": "Aplikasi Penerimaan Peserta Didik Baru dengan sistem Multi-User (Admin & Pendaftar) dan simulasi integrasi Google Sheets.",
+  "requestFramePermissions": []
+}
